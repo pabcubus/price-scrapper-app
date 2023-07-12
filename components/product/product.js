@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     width: "100%",
-    maxHeight: width,
+    minHeight: width,
     justifyContent: "center",
     padding: 5,
   },
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    borderRadius: 5
+    borderRadius: 5,
   },
   legendWrapper: {
     flex: 1,

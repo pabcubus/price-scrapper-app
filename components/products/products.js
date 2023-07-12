@@ -1,5 +1,5 @@
 import { StyleSheet, View } from "react-native";
-import Product from "../product/product";
+import Product from "../Product/Product";
 
 const Products = ({ products }) => {
   return (
