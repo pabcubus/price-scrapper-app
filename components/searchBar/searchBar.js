@@ -9,7 +9,7 @@ const SearchBar = () => {
   return (
     <Flex direction="column" style={materialStyle.container}>
       <Flex direction="row" style={materialStyle.searchContainer}>
-        <TextInput
+        <TextInput          
           style={style.input}
           label="Label"
           variant="outlined"
