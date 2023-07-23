@@ -90,7 +90,7 @@ const materialStyle = {
 const style = StyleSheet.create({
   input: {
     flexGrow: 1,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     paddingVertical: 15,
     backgroundColor: defaultStyles.colorPrincipal,
     borderRadius
