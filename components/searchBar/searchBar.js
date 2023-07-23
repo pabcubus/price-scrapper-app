@@ -1,19 +1,19 @@
 import { 
-  StyleSheet
+  StyleSheet,
+  TextInput
 } from 'react-native'
-import { Flex, IconButton, Button, TextInput, Surface, Text } from "@react-native-material/core";
+import { Flex, Button, Surface, Text } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import defaultStyles from '../../assets/styles/global'
+
+const borderRadius = 20;
+const gap = 10;
 
 const SearchBar = () => {
   return (
     <Flex direction="column" style={materialStyle.container}>
       <Flex direction="row" style={materialStyle.searchContainer}>
-        <TextInput          
-          style={style.input}
-          label="Label"
-          variant="outlined"
-        />
+        <TextInput placeholder="¿Que quieres buscar?" style={style.input} />
       </Flex>
       <Flex direction="row" style={materialStyle.dataContainer}>
         <Surface style={materialStyle.dataContainerItem}>
@@ -55,20 +55,21 @@ export default SearchBar;
 const materialStyle = {
   container: {
     padding: 10,
-    gap: 5
+    gap
   },
   searchContainer: {
     gap: 5
   },
   dataContainer: {
-    gap: 10
+    gap
   },
   dataContainerItem: {
     gap: 5,
     flexShrink: 1,
-    padding: 10,
-    backgroundColor: defaultStyles.colorPrincipal,
-    borderRadius: 10
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: defaultStyles.gray1,
+    borderRadius
   },
   dataContainerItemValue: {
     flexDirection: 'row',
@@ -88,6 +89,10 @@ const materialStyle = {
 
 const style = StyleSheet.create({
   input: {
-    flexGrow: 1
+    flexGrow: 1,
+    paddingHorizontal: 10,
+    paddingVertical: 15,
+    backgroundColor: defaultStyles.colorPrincipal,
+    borderRadius
   }
 });
