@@ -1,6 +1,5 @@
-import { StyleSheet, View, FlatList } from "react-native";
-import Product from "../Product/Product";
-import { ListItem, Avatar } from "@react-native-material/core";
+import { StyleSheet, View, FlatList, Text } from "react-native";
+import { ListItem, Avatar, Surface } from "@react-native-material/core";
 
 const Products = ({ products }) => {
   return (
@@ -12,25 +11,60 @@ const Products = ({ products }) => {
   );
 };
 
+const getBusinessColor = (str) => {
+  if (str === 'olimpica') {
+    return {...materialStyle.businessContainer, backgroundColor: '#e2001a'}
+  }
+
+  if (str === 'exito') {
+    return {...materialStyle.businessContainer, backgroundColor: '#ffe800'}
+  }
+
+  if (str === 'alkosto') {
+    return {...materialStyle.businessContainer, backgroundColor: '#004797'}
+  }
+};
+
 const DrawItem = (p) => {
   return (
-    <ListItem
-      leadingMode="avatar"
-      leading={
-        <Avatar image={{ uri: p.img }} />
-      }
-      title={p.name}
-      secondaryText="I'll be in your neighborhood doing errands this…"
-    />
+    <View style={styles.container}>
+      <ListItem
+        leadingMode="avatar"
+        leading={
+          <Avatar image={{ uri: p.img }} />
+        }
+        title={p.name}
+        secondaryText="I'll be in your neighborhood doing errands this…"
+      />
+      <Surface elevation={1} style={getBusinessColor(p.business)}>
+        <Text style={styles.textStyle(p.business)}>{p.business}</Text>
+      </Surface>
+    </View>
   );
 }
 
 export default Products;
 
+const materialStyle = {
+  businessContainer: {
+    position: 'absolute',
+    right: 10,
+    top: 5,
+    paddingVertical: 3,
+    paddingHorizontal: 10,
+    borderRadius: 10
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: "column",
-    alignItems: "center",
+    position: 'relative'
   },
+  textStyle: (str) => {
+    if (str === 'exito') {
+      return {color: 'black', fontSize: 10};
+    }
+
+    return {color: 'white', fontSize: 10};
+  }
 });

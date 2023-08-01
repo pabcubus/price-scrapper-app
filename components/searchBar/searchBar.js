@@ -16,7 +16,7 @@ const SearchBar = () => {
         <TextInput placeholder="¿Que quieres buscar?" style={style.input} />
       </Flex>
       <Flex direction="row" style={materialStyle.dataContainer}>
-        <Surface style={materialStyle.dataContainerItem}>
+        <Surface elevation={1} style={materialStyle.dataContainerItem}>
           <Text variant="h6">$ 1.600.000</Text>
           <Flex direction="row" style={materialStyle.dataContainerItemValue}>
             <Icon
@@ -27,7 +27,7 @@ const SearchBar = () => {
             <Text variant="caption">Valor promedio</Text>
           </Flex>
         </Surface>
-        <Surface style={materialStyle.dataContainerItem}>
+        <Surface elevation={1} style={materialStyle.dataContainerItem}>
           <Text variant="h6">34</Text>
           <Flex direction="row" style={materialStyle.dataContainerItemValue}>
             <Icon
