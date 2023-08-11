@@ -1,13 +1,12 @@
-import SearchProducts from './pages/SearchProducts/SearchProducts';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
+import SearchProducts from './pages/SearchProducts/SearchProducts';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
-
   return (
     <NavigationContainer>
       <Stack.Navigator>

@@ -7,7 +7,10 @@ const Login = ({ navigation }) => {
     <SafeAreaView style={styles.safeArea}>
       <Flex direction="column" style={materialStyles.container}>
         <TextInput label="Usuario" variant="standard" />
-        <TextInput label="Contraseña" variant="standard" />
+        <TextInput
+          label="Contraseña"
+          variant="standard"
+          secureTextEntry={true} />
         <Button
           title={() => (
             <Text style={materialStyles.button}>
