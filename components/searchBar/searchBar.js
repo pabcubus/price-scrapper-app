@@ -8,6 +8,7 @@ import defaultStyles from '../../assets/styles/global'
 
 const borderRadius = 20;
 const gap = 10;
+const fontFamily = 'monserrat-regular';
 
 const SearchBar = () => {
   return (
@@ -17,25 +18,25 @@ const SearchBar = () => {
       </Flex>
       <Flex direction="row" style={materialStyle.dataContainer}>
         <Surface elevation={1} style={materialStyle.dataContainerItem}>
-          <Text variant="h6">$ 1.600.000</Text>
+          <Text style={materialStyle.surfaceText} variant="h6">$ 1.600.000</Text>
           <Flex direction="row" style={materialStyle.dataContainerItemValue}>
             <Icon
               style={materialStyle.dataContainerItemIcon}
               name="cash"
               size={13}
               color={defaultStyles.colorFont}/>
-            <Text variant="caption">Valor promedio</Text>
+            <Text style={materialStyle.surfaceText} variant="caption">Valor promedio</Text>
           </Flex>
         </Surface>
         <Surface elevation={1} style={materialStyle.dataContainerItem}>
-          <Text variant="h6">34</Text>
+          <Text style={materialStyle.surfaceText} variant="h6">34</Text>
           <Flex direction="row" style={materialStyle.dataContainerItemValue}>
             <Icon
               style={materialStyle.dataContainerItemIcon}
               name="menu"
               size={13}
               color={defaultStyles.colorFont}/>
-            <Text variant="caption">Cantidad</Text>
+            <Text style={materialStyle.surfaceText} variant="caption">Cantidad</Text>
           </Flex>
         </Surface>
       </Flex>
@@ -44,7 +45,8 @@ const SearchBar = () => {
           style={materialStyle.filter}
           color={defaultStyles.colorFont}
           leading={props => <Icon name="filter" {...props} />}
-          variant="text" title="Filters" />
+          variant="text"
+          title="Filters" />
       </Flex>
     </Flex>
   );
@@ -62,6 +64,9 @@ const materialStyle = {
   },
   dataContainer: {
     gap
+  },
+  surfaceText: {
+    fontFamily
   },
   dataContainerItem: {
     gap: 5,
@@ -82,6 +87,7 @@ const materialStyle = {
     gap: 5
   },
   filter: {
+    fontFamily,
     color: defaultStyles.colorFont,
     paddingRight: 5
   }
@@ -93,6 +99,7 @@ const style = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 15,
     backgroundColor: defaultStyles.colorPrincipal,
+    fontFamily,
     borderRadius
   }
 });

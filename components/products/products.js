@@ -1,5 +1,7 @@
-import { StyleSheet, View, FlatList, Text } from "react-native";
-import { ListItem, Avatar, Surface } from "@react-native-material/core";
+import { StyleSheet, View, FlatList } from "react-native";
+import { ListItem, Avatar, Surface, Text } from "@react-native-material/core";
+
+const fontFamily = 'monserrat-regular';
 
 const Products = ({ products }) => {
   return (
@@ -33,8 +35,14 @@ const DrawItem = (p) => {
         leading={
           <Avatar image={{ uri: p.img }} />
         }
-        title={p.name}
-        secondaryText="I'll be in your neighborhood doing errands this…"
+        title={
+          <Text style={materialStyle.listTitle}>Hi!</Text>
+        }
+        secondaryText={
+          <Text style={materialStyle.listDesc}>
+            I'll be in your neighborhood doing errands this…
+          </Text>
+        }
       />
       <Surface elevation={1} style={getBusinessColor(p.business)}>
         <Text style={styles.textStyle(p.business)}>{p.business}</Text>
@@ -53,6 +61,13 @@ const materialStyle = {
     paddingVertical: 3,
     paddingHorizontal: 10,
     borderRadius: 10
+  },
+  listTitle: {
+    fontFamily
+  },
+  listDesc: {
+    fontFamily,
+    fontSize: 11
   }
 }
 
@@ -61,10 +76,15 @@ const styles = StyleSheet.create({
     position: 'relative'
   },
   textStyle: (str) => {
+    const props = {
+      fontFamily,
+      fontSize: 10
+    }
+    
     if (str === 'exito') {
-      return {color: 'black', fontSize: 10};
+      return {color: 'black', ...props};
     }
 
-    return {color: 'white', fontSize: 10};
+    return {color: 'white', ...props};
   }
 });

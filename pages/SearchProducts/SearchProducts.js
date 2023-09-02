@@ -4,13 +4,9 @@ import Constants from 'expo-constants';
 import Products from '../../components/Products/Products';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import Logged from '../../layouts/Logged';
-import { useFonts } from 'expo-font';
 import products from '../../demo/products';
 
-const SearchProducts = ({ navigation }) => {
-  const [fontsLoaded] = useFonts({
-    'Montserrat': require('../../assets/fonts/Montserrat.otf'),
-  });
+const SearchProducts = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -31,7 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     paddingTop: Constants.statusBarHeight,
-    fontFamily: 'Montserrat',
     backgroundColor: 'white'
   }
 });

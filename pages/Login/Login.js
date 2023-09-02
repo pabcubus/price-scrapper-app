@@ -2,22 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Flex, Button, Text, TextInput } from "@react-native-material/core";
 import { StyleSheet, SafeAreaView } from "react-native";
 import Constants from "expo-constants";
-import * as Font from 'expo-font';
+import fontLoader from '../../util/helpers/fontLoader';
 
 const Login = ({ navigation }) => {
   const [fontLoaded, setFontLoaded] = useState(false);
-
-  useEffect(() => {
-    async function loadFont() {
-      await Font.loadAsync({
-        'monserrat-regular': require('../../assets/fonts/MontserratRegular.ttf'),
-      });
-
-      setFontLoaded(true);
-    }
-
-    loadFont();
-  }, []);
+  useEffect(fontLoader(setFontLoaded), []);
 
   if (!fontLoaded) {
     return (<Text>Loading...</Text>);
